@@ -1,4 +1,4 @@
-Aula03
+Códigos do treinamento Swift e IOS 8
 ======
 
-Código da aula 03 do curso de iOS
+Códigos das aulas do curso de iOS
