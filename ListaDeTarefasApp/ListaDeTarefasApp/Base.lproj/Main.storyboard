@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1xL-ez-1uQ">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tarefas-->
+        <scene sceneID="TQP-0h-p4e">
+            <objects>
+                <tableViewController id="PTh-PJ-u0C" customClass="ListaDeTarefasTableViewController" customModule="ListaDeTarefasApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="CDN-je-kw2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="listaTarefas" selectionStyle="default" indentationWidth="10" reuseIdentifier="listaTarefas" id="qMd-jI-QLV">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qMd-jI-QLV" id="p2Y-1G-6Zo">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="eff-b8-Iro" kind="show" identifier="detalheTarefa" id="7xz-Kj-GXD"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="PTh-PJ-u0C" id="pyT-Zs-Lj1"/>
+                            <outlet property="delegate" destination="PTh-PJ-u0C" id="bfI-Ft-mcv"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Tarefas" id="a51-Fm-cgz">
+                        <barButtonItem key="rightBarButtonItem" title="Adicionar" id="lSB-lp-02c">
+                            <connections>
+                                <segue destination="FGn-kH-ngg" kind="presentation" id="sQM-ie-E58"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D40-oc-UUU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="982.5" y="99"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hEs-8c-F48">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1xL-ez-1uQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1BN-GS-HdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="PTh-PJ-u0C" kind="relationship" relationship="rootViewController" id="JTv-oK-F0k"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k6l-5T-Fod" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="232.5" y="99"/>
+        </scene>
+        <!--Detalhe Tarefa View Controller-->
+        <scene sceneID="G7g-mb-dR8">
+            <objects>
+                <viewController id="eff-b8-Iro" customClass="DetalheTarefaViewController" customModule="ListaDeTarefasApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fch-t5-7eT"/>
+                        <viewControllerLayoutGuide type="bottom" id="znP-p3-XSD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="i42-7a-tCF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detalhes da tarefa" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QWe-0o-ITi">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="20" width="227" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sas-py-dno">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="71" y="127" width="42" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YaU-Vj-tjB">
+                                <rect key="frame" x="279" y="133" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="YaU-Vj-tjB" secondAttribute="height" multiplier="2:1" id="DOn-We-3I4"/>
+                                    <constraint firstAttribute="width" constant="42" id="bUc-wN-wvK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YaU-Vj-tjB" firstAttribute="top" secondItem="fch-t5-7eT" secondAttribute="bottom" constant="69" id="IJd-7I-bXi"/>
+                            <constraint firstItem="YaU-Vj-tjB" firstAttribute="leading" secondItem="i42-7a-tCF" secondAttribute="leadingMargin" constant="263" id="QSp-8X-1yf"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="QWe-0o-ITi"/>
+                                <exclude reference="sas-py-dno"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="QWe-0o-ITi"/>
+                                <include reference="sas-py-dno"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="tarefaLabel" destination="YaU-Vj-tjB" id="Prw-Om-8OJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kgv-ES-H8s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1771.5" y="639"/>
+        </scene>
+        <!--Adicionar Tarefa View Controller-->
+        <scene sceneID="gNL-I4-mFE">
+            <objects>
+                <viewController id="FGn-kH-ngg" customClass="AdicionarTarefaViewController" customModule="ListaDeTarefasApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZaU-qf-lmX"/>
+                        <viewControllerLayoutGuide type="bottom" id="7th-1p-mop"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tSr-Ze-MRd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adicione a tarefa" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="klo-Lo-7rl">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="32" y="20" width="129" height="21"/>
+                                </variation>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KZs-zl-Grg">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="37" y="79" width="330" height="30"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="FGn-kH-ngg" id="M5j-Uk-BPL"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R78-ZW-ATx">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Adicionar">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="179" y="259" width="65" height="30"/>
+                                </variation>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Tarefa a ser adicionada" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pi5-9d-ZGV">
+                                <rect key="frame" x="16" y="98" width="306" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="pi5-9d-ZGV" secondAttribute="height" multiplier="102:7" id="n3F-hK-uMs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xFd-FM-eM1">
+                                <rect key="frame" x="16" y="143" width="568" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="xFd-FM-eM1" secondAttribute="height" multiplier="284:15" id="r5Y-YI-Gx2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcT-WK-qo2">
+                                <rect key="frame" x="268" y="246" width="65" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="Ocv-5l-XuG"/>
+                                    <constraint firstAttribute="width" secondItem="bcT-WK-qo2" secondAttribute="height" multiplier="13:6" id="Yo9-km-ZHy"/>
+                                </constraints>
+                                <state key="normal" title="Adicionar">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="adicionarTarefa:" destination="FGn-kH-ngg" eventType="touchUpInside" id="Pb4-s6-Ldb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pi5-9d-ZGV" firstAttribute="top" secondItem="ZaU-qf-lmX" secondAttribute="bottom" constant="40" id="3Lr-TI-kzQ"/>
+                            <constraint firstItem="bcT-WK-qo2" firstAttribute="top" secondItem="xFd-FM-eM1" secondAttribute="bottom" constant="73" id="3gQ-up-W7l"/>
+                            <constraint firstItem="bcT-WK-qo2" firstAttribute="leading" secondItem="tSr-Ze-MRd" secondAttribute="leadingMargin" constant="252" id="9VT-6l-EFI"/>
+                            <constraint firstItem="xFd-FM-eM1" firstAttribute="trailing" secondItem="tSr-Ze-MRd" secondAttribute="trailingMargin" id="Wui-fy-RZN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bcT-WK-qo2" secondAttribute="trailing" constant="251" id="Y6b-Y2-mLw"/>
+                            <constraint firstItem="xFd-FM-eM1" firstAttribute="leading" secondItem="tSr-Ze-MRd" secondAttribute="leadingMargin" id="gXS-DB-vSS"/>
+                            <constraint firstItem="xFd-FM-eM1" firstAttribute="top" secondItem="pi5-9d-ZGV" secondAttribute="bottom" constant="24" id="m3j-ZA-r2I"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="klo-Lo-7rl"/>
+                                <exclude reference="KZs-zl-Grg"/>
+                                <exclude reference="R78-ZW-ATx"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="klo-Lo-7rl"/>
+                                <include reference="KZs-zl-Grg"/>
+                                <include reference="R78-ZW-ATx"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="tarefaText" destination="xFd-FM-eM1" id="0Br-9u-4Za"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Xf-vi-jRI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1771" y="-149"/>
+        </scene>
+    </scenes>
+</document>
