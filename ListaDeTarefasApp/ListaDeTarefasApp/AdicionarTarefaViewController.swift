@@ -28,17 +28,17 @@ class AdicionarTarefaViewController: UIViewController, UITextFieldDelegate {
         arrayDeTarefas.append(self.tarefaText.text)
         self.tarefaText.text = nil
         self.tarefaText.resignFirstResponder() // comando para retirar o teclado da tela quando o texto do campo for retirado
-        
+        /*
         // construcao para apagar destruir a view e voltar para a view anterior se a trasicao for do tipo show (push)
         if let navegation = self.navigationController {
             navegation.popViewControllerAnimated(true)
         }
+        */
         
-        /*
         self.dismissViewControllerAnimated(true, completion: { () -> Void in
             
         })// comando para apagar destruir a view e voltar para a view anterior se a transicao for do tipo apresentar modal
-*/
+
     }
     
     //metodo para quando o botão do return do teclado o metodo adicionar tarefa seja chamado

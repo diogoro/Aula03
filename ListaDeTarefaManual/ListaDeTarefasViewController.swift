@@ -10,11 +10,17 @@ import UIKit
 
 class ListaDeTarefasViewController: UIViewController, UITableViewDataSource {
 
+    var arrayTarefas:[Tarefa] = []
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let tarefa1 = Tarefa(titulo: "Estudar IOS", descricao: "Assunto: TableView", data: "05/01/2015")
+        self.arrayTarefas.append(tarefa1)
+        
+        let tarefa2 = Tarefa(titulo: "Fazer pizza", descricao: "", data: "05/01/2015")
+        self.arrayTarefas.append(tarefa2)
         // Do any additional setup after loading the view.
     }
 
@@ -28,15 +34,17 @@ class ListaDeTarefasViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return self.arrayTarefas.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let minhaCell = tableView.dequeueReusableCellWithIdentifier("minhaCelula") as CelulaTarefaTableViewCell
         
-        minhaCell.tituloTarefa.text = "Tarefa 1"
-        minhaCell.descricaoTarefa.text = "Realizar tarefa 1"
-        minhaCell.dataTarefa.text = "05/01/2015"
+        let minhaTarefa = arrayTarefas[indexPath.row]
+        
+        minhaCell.tituloTarefa.text = minhaTarefa.titulo
+        minhaCell.descricaoTarefa.text = minhaTarefa.descricao
+        minhaCell.dataTarefa.text = minhaTarefa.data
         return minhaCell
     }
 

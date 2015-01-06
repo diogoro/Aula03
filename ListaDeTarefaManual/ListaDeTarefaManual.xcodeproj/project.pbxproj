@@ -14,6 +14,7 @@
 		D9DA46681A5B3ACD00F16618 /* ListaDeTarefaManualTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DA46671A5B3ACD00F16618 /* ListaDeTarefaManualTests.swift */; };
 		D9DA46721A5B3B4D00F16618 /* ListaDeTarefasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DA46711A5B3B4D00F16618 /* ListaDeTarefasViewController.swift */; };
 		D9DA46741A5B3B8E00F16618 /* CelulaTarefaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DA46731A5B3B8E00F16618 /* CelulaTarefaTableViewCell.swift */; };
+		D9DA46761A5B4BCC00F16618 /* Tarefa.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DA46751A5B4BCC00F16618 /* Tarefa.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		D9DA46671A5B3ACD00F16618 /* ListaDeTarefaManualTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaDeTarefaManualTests.swift; sourceTree = "<group>"; };
 		D9DA46711A5B3B4D00F16618 /* ListaDeTarefasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListaDeTarefasViewController.swift; path = ../ListaDeTarefasViewController.swift; sourceTree = "<group>"; };
 		D9DA46731A5B3B8E00F16618 /* CelulaTarefaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CelulaTarefaTableViewCell.swift; sourceTree = "<group>"; };
+		D9DA46751A5B4BCC00F16618 /* Tarefa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tarefa.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				D9DA46581A5B3ACD00F16618 /* Images.xcassets */,
 				D9DA465A1A5B3ACD00F16618 /* LaunchScreen.xib */,
 				D9DA46711A5B3B4D00F16618 /* ListaDeTarefasViewController.swift */,
+				D9DA46751A5B4BCC00F16618 /* Tarefa.swift */,
 				D9DA46731A5B3B8E00F16618 /* CelulaTarefaTableViewCell.swift */,
 				D9DA464F1A5B3ACD00F16618 /* Supporting Files */,
 			);
@@ -217,6 +220,7 @@
 			files = (
 				D9DA46721A5B3B4D00F16618 /* ListaDeTarefasViewController.swift in Sources */,
 				D9DA46521A5B3ACD00F16618 /* AppDelegate.swift in Sources */,
+				D9DA46761A5B4BCC00F16618 /* Tarefa.swift in Sources */,
 				D9DA46741A5B3B8E00F16618 /* CelulaTarefaTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
