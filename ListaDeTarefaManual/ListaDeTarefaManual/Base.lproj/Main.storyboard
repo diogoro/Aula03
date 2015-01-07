@@ -73,7 +73,14 @@
                             <constraint firstItem="eYw-4j-N1d" firstAttribute="leading" secondItem="sn2-3I-Rjk" secondAttribute="leading" id="hzB-4K-6gA"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Lista de Tarefas" id="6uA-5o-d9S"/>
+                    <navigationItem key="navigationItem" title="Lista de Tarefas" id="6uA-5o-d9S">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="651-Jh-Y57">
+                            <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="FhU-Hs-gLj" kind="presentation" identifier="adicionaTarefa" id="gSp-v5-H9c"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="eYw-4j-N1d" id="EOg-Aj-GCf"/>
                     </connections>
@@ -81,6 +88,75 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7AQ-5B-SDz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1224" y="363"/>
+        </scene>
+        <!--Adicionar tarefa-->
+        <scene sceneID="kPz-2E-Y7u">
+            <objects>
+                <viewController id="Sch-iZ-n6c" customClass="AdicionaTarefaViewController" customModule="ListaDeTarefaManual" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5PE-rd-O0o"/>
+                        <viewControllerLayoutGuide type="bottom" id="I9W-wx-ENx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iR4-je-fQM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Título da tarefa" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lrq-ZT-FzT">
+                                <rect key="frame" x="20" y="94" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Descrição da terefa" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U5D-BX-Hzx">
+                                <rect key="frame" x="20" y="144" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Sch-iZ-n6c" id="HnP-P0-ue1"/>
+                                </connections>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="l1Y-K2-TNQ">
+                                <rect key="frame" x="20" y="204" width="560" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="442283813.07158202">
+                                    <!--2015-01-07 00:36:53 +0000-->
+                                </date>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="U5D-BX-Hzx" firstAttribute="top" secondItem="Lrq-ZT-FzT" secondAttribute="bottom" constant="20" id="9dT-3c-iV5"/>
+                            <constraint firstItem="Lrq-ZT-FzT" firstAttribute="top" secondItem="5PE-rd-O0o" secondAttribute="bottom" constant="30" id="Bof-U6-03e"/>
+                            <constraint firstAttribute="trailing" secondItem="Lrq-ZT-FzT" secondAttribute="trailing" constant="20" id="VIc-LN-Ght"/>
+                            <constraint firstItem="l1Y-K2-TNQ" firstAttribute="leading" secondItem="iR4-je-fQM" secondAttribute="leading" constant="20" id="buz-KP-ane"/>
+                            <constraint firstItem="l1Y-K2-TNQ" firstAttribute="top" secondItem="U5D-BX-Hzx" secondAttribute="bottom" constant="30" id="hzX-im-NDd"/>
+                            <constraint firstAttribute="trailing" secondItem="U5D-BX-Hzx" secondAttribute="trailing" constant="20" id="i1T-re-s9m"/>
+                            <constraint firstItem="Lrq-ZT-FzT" firstAttribute="leading" secondItem="iR4-je-fQM" secondAttribute="leading" constant="20" id="oPe-Zp-SjB"/>
+                            <constraint firstItem="U5D-BX-Hzx" firstAttribute="leading" secondItem="iR4-je-fQM" secondAttribute="leading" constant="20" id="q8k-dp-sCM"/>
+                            <constraint firstAttribute="trailing" secondItem="l1Y-K2-TNQ" secondAttribute="trailing" constant="20" id="zgf-zP-4y7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Adicionar tarefa" id="FCz-2q-2HX">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Qzf-RX-WPW">
+                            <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="dismissTela:" destination="Sch-iZ-n6c" id="l2h-rz-dEc"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="q18-M1-ZZQ">
+                            <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="salvarTarefa:" destination="Sch-iZ-n6c" id="EEf-Mv-eeT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="dataTarefa" destination="l1Y-K2-TNQ" id="NOL-rI-9jY"/>
+                        <outlet property="descricaoTarefa" destination="U5D-BX-Hzx" id="C4u-M6-3Lq"/>
+                        <outlet property="tituloTarefa" destination="Lrq-ZT-FzT" id="peo-tn-B5V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IcY-Sp-gOI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2790" y="-29"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="unS-r5-dJw">
@@ -99,6 +175,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nd1-Yc-nMn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="412" y="363"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Y3o-NE-wV0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FhU-Hs-gLj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Etq-n9-FBD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Sch-iZ-n6c" kind="relationship" relationship="rootViewController" id="XUE-EO-is0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hJo-IH-1zS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1978" y="-29"/>
         </scene>
     </scenes>
 </document>

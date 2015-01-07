@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D9CA17C51A5CB957007F8E61 /* AdicionaTarefaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CA17C41A5CB957007F8E61 /* AdicionaTarefaViewController.swift */; };
 		D9DA46521A5B3ACD00F16618 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DA46511A5B3ACD00F16618 /* AppDelegate.swift */; };
 		D9DA46571A5B3ACD00F16618 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9DA46551A5B3ACD00F16618 /* Main.storyboard */; };
 		D9DA46591A5B3ACD00F16618 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9DA46581A5B3ACD00F16618 /* Images.xcassets */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D9CA17C41A5CB957007F8E61 /* AdicionaTarefaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdicionaTarefaViewController.swift; sourceTree = "<group>"; };
 		D9DA464C1A5B3ACD00F16618 /* ListaDeTarefaManual.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListaDeTarefaManual.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9DA46501A5B3ACD00F16618 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9DA46511A5B3ACD00F16618 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +62,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D9CA17C01A5CB56C007F8E61 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D9DA46711A5B3B4D00F16618 /* ListaDeTarefasViewController.swift */,
+				D9DA46731A5B3B8E00F16618 /* CelulaTarefaTableViewCell.swift */,
+				D9CA17C41A5CB957007F8E61 /* AdicionaTarefaViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		D9CA17C11A5CB57E007F8E61 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D9DA46751A5B4BCC00F16618 /* Tarefa.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		D9DA46431A5B3ACD00F16618 = {
 			isa = PBXGroup;
 			children = (
@@ -81,13 +101,12 @@
 		D9DA464E1A5B3ACD00F16618 /* ListaDeTarefaManual */ = {
 			isa = PBXGroup;
 			children = (
+				D9CA17C11A5CB57E007F8E61 /* Model */,
+				D9CA17C01A5CB56C007F8E61 /* View */,
 				D9DA46511A5B3ACD00F16618 /* AppDelegate.swift */,
 				D9DA46551A5B3ACD00F16618 /* Main.storyboard */,
 				D9DA46581A5B3ACD00F16618 /* Images.xcassets */,
 				D9DA465A1A5B3ACD00F16618 /* LaunchScreen.xib */,
-				D9DA46711A5B3B4D00F16618 /* ListaDeTarefasViewController.swift */,
-				D9DA46751A5B4BCC00F16618 /* Tarefa.swift */,
-				D9DA46731A5B3B8E00F16618 /* CelulaTarefaTableViewCell.swift */,
 				D9DA464F1A5B3ACD00F16618 /* Supporting Files */,
 			);
 			path = ListaDeTarefaManual;
@@ -219,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9DA46721A5B3B4D00F16618 /* ListaDeTarefasViewController.swift in Sources */,
+				D9CA17C51A5CB957007F8E61 /* AdicionaTarefaViewController.swift in Sources */,
 				D9DA46521A5B3ACD00F16618 /* AppDelegate.swift in Sources */,
 				D9DA46761A5B4BCC00F16618 /* Tarefa.swift in Sources */,
 				D9DA46741A5B3B8E00F16618 /* CelulaTarefaTableViewCell.swift in Sources */,
@@ -415,6 +435,7 @@
 				D9DA466D1A5B3ACD00F16618 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D9DA466E1A5B3ACD00F16618 /* Build configuration list for PBXNativeTarget "ListaDeTarefaManualTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +444,7 @@
 				D9DA46701A5B3ACD00F16618 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
