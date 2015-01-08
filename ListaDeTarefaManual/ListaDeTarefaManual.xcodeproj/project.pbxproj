@@ -16,6 +16,9 @@
 		D9DA46721A5B3B4D00F16618 /* ListaDeTarefasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DA46711A5B3B4D00F16618 /* ListaDeTarefasViewController.swift */; };
 		D9DA46741A5B3B8E00F16618 /* CelulaTarefaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DA46731A5B3B8E00F16618 /* CelulaTarefaTableViewCell.swift */; };
 		D9DA46761A5B4BCC00F16618 /* Tarefa.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DA46751A5B4BCC00F16618 /* Tarefa.swift */; };
+		D9F576FC1A5DD4FB000A02E9 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F576FA1A5DD4FB000A02E9 /* Realm.framework */; };
+		D9F576FD1A5DD4FB000A02E9 /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F576FB1A5DD4FB000A02E9 /* RLMSupport.swift */; };
+		D9F576FF1A5DD513000A02E9 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F576FE1A5DD513000A02E9 /* libc++.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +45,9 @@
 		D9DA46711A5B3B4D00F16618 /* ListaDeTarefasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListaDeTarefasViewController.swift; path = ../ListaDeTarefasViewController.swift; sourceTree = "<group>"; };
 		D9DA46731A5B3B8E00F16618 /* CelulaTarefaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CelulaTarefaTableViewCell.swift; sourceTree = "<group>"; };
 		D9DA46751A5B4BCC00F16618 /* Tarefa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tarefa.swift; sourceTree = "<group>"; };
+		D9F576FA1A5DD4FB000A02E9 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		D9F576FB1A5DD4FB000A02E9 /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLMSupport.swift; sourceTree = "<group>"; };
+		D9F576FE1A5DD513000A02E9 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +55,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9F576FF1A5DD513000A02E9 /* libc++.dylib in Frameworks */,
+				D9F576FC1A5DD4FB000A02E9 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +91,7 @@
 		D9DA46431A5B3ACD00F16618 = {
 			isa = PBXGroup;
 			children = (
+				D9F576FE1A5DD513000A02E9 /* libc++.dylib */,
 				D9DA464E1A5B3ACD00F16618 /* ListaDeTarefaManual */,
 				D9DA46641A5B3ACD00F16618 /* ListaDeTarefaManualTests */,
 				D9DA464D1A5B3ACD00F16618 /* Products */,
@@ -101,6 +110,7 @@
 		D9DA464E1A5B3ACD00F16618 /* ListaDeTarefaManual */ = {
 			isa = PBXGroup;
 			children = (
+				D9F576F91A5DD487000A02E9 /* Libs Externas */,
 				D9CA17C11A5CB57E007F8E61 /* Model */,
 				D9CA17C01A5CB56C007F8E61 /* View */,
 				D9DA46511A5B3ACD00F16618 /* AppDelegate.swift */,
@@ -135,6 +145,15 @@
 				D9DA46661A5B3ACD00F16618 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D9F576F91A5DD487000A02E9 /* Libs Externas */ = {
+			isa = PBXGroup;
+			children = (
+				D9F576FA1A5DD4FB000A02E9 /* Realm.framework */,
+				D9F576FB1A5DD4FB000A02E9 /* RLMSupport.swift */,
+			);
+			name = "Libs Externas";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9DA46721A5B3B4D00F16618 /* ListaDeTarefasViewController.swift in Sources */,
+				D9F576FD1A5DD4FB000A02E9 /* RLMSupport.swift in Sources */,
 				D9CA17C51A5CB957007F8E61 /* AdicionaTarefaViewController.swift in Sources */,
 				D9DA46521A5B3ACD00F16618 /* AppDelegate.swift in Sources */,
 				D9DA46761A5B4BCC00F16618 /* Tarefa.swift in Sources */,
@@ -366,6 +386,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ListaDeTarefaManual",
+				);
 				INFOPLIST_FILE = ListaDeTarefaManual/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -376,6 +400,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ListaDeTarefaManual",
+				);
 				INFOPLIST_FILE = ListaDeTarefaManual/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Realm
 
 class AdicionaTarefaViewController: UIViewController, UITextFieldDelegate {
 
@@ -30,17 +31,16 @@ class AdicionaTarefaViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func salvarTarefa(sender: UIBarButtonItem) {
-        let titulo = self.tituloTarefa.text
-        let descricao = self.descricaoTarefa.text
-        let data = self.dataTarefa.date
         
-        //converter NSDate para NSString
-        let formatter: NSDateFormatter = NSDateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
-        let dataString = formatter.stringFromDate(NSDate())
-
-        let tarefa = Tarefa(titulo: titulo, descricao: descricao, data: dataString)
-        arrayTarefas.append(tarefa)
+        let realm = RLMRealm.defaultRealm()
+        realm.transactionWithBlock { () -> Void in
+            let novaTarefa = Tarefa()
+            novaTarefa.titulo = self.tituloTarefa.text
+            novaTarefa.descricao = self.descricaoTarefa.text
+            novaTarefa.data = self.dataTarefa.date
+            realm.addObject(novaTarefa)
+        }
+        
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 

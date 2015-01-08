@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 Diogo Ribeiro de Oliveira. All rights reserved.
 //
 
-import Foundation
+import Realm
 
-struct Tarefa {
-    let titulo: String
-    let descricao: String
-    let data: String
+class Tarefa: RLMObject {
+    dynamic var titulo = ""
+    dynamic var descricao = ""
+    dynamic var data = NSDate()
 }

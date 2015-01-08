@@ -7,23 +7,22 @@
 //
 
 import UIKit
-
-var arrayTarefas:[Tarefa] = []
+import Realm
 
 class ListaDeTarefasViewController: UIViewController, UITableViewDataSource {
-
+    
+    var arrayTarefas:RLMResults { // retorna todos os objetos da tabela
+        get{
+           return Tarefa.allObjects()
+        }
+    }
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tarefa1 = Tarefa(titulo: "Estudar IOS", descricao: "Assunto: TableView", data: "05/01/2015")
-        arrayTarefas.append(tarefa1) //self.arrayTarefas.append(tarefa1)
         
-        
-        let tarefa2 = Tarefa(titulo: "Fazer pizza", descricao: "", data: "05/01/2015")
-        arrayTarefas.append(tarefa2) //self.arrayTarefas.append(tarefa2)
         // Do any additional setup after loading the view.
     }
 
@@ -37,24 +36,41 @@ class ListaDeTarefasViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayTarefas.count //self.arrayTarefas.count
+        return Int(self.arrayTarefas.count) // necessario fazer o typeCast
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let minhaCell = tableView.dequeueReusableCellWithIdentifier("minhaCelula") as CelulaTarefaTableViewCell
         
-        let minhaTarefa = arrayTarefas[indexPath.row]
+        let minhaTarefa = arrayTarefas[UInt(indexPath.row)] as Tarefa
+        
+        //converter NSDate para NSString
+        var formatter: NSDateFormatter = NSDateFormatter()
+        formatter.dateFormat = "dd/MM - hh:mm"
+        var dataString = formatter.stringFromDate(minhaTarefa.data)
+        println("Data em string: \(dataString)")
         
         minhaCell.tituloTarefa.text = minhaTarefa.titulo
         minhaCell.descricaoTarefa.text = minhaTarefa.descricao
-        minhaCell.dataTarefa.text = minhaTarefa.data
+        minhaCell.dataTarefa.text = dataString
+        
+
+        minhaCell.backgroundColor = getRandomColor()
         return minhaCell
     }
     
-    func adicionarTarefas(tarefa task: Tarefa) {
-        arrayTarefas.append(task)
+    func getRandomColor() -> UIColor{
+        
+        var randomRed:CGFloat = CGFloat(drand48())
+        
+        var randomGreen:CGFloat = CGFloat(drand48())
+        
+        var randomBlue:CGFloat = CGFloat(drand48())
+        
+        return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
+        
     }
-
+    
     /*
     // MARK: - Navigation
 
