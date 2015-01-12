@@ -14,6 +14,7 @@ class AdicionaTarefaViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var tituloTarefa: UITextField!
     @IBOutlet weak var descricaoTarefa: UITextField!
     @IBOutlet weak var dataTarefa: UIDatePicker!
+    @IBOutlet weak var categoriaTarefa: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,11 +35,15 @@ class AdicionaTarefaViewController: UIViewController, UITextFieldDelegate {
         
         let realm = RLMRealm.defaultRealm()
         realm.transactionWithBlock { () -> Void in
+            let categoria = Categoria()
+            categoria.nome = self.categoriaTarefa.text
             let novaTarefa = Tarefa()
             novaTarefa.titulo = self.tituloTarefa.text
             novaTarefa.descricao = self.descricaoTarefa.text
             novaTarefa.data = self.dataTarefa.date
-            realm.addObject(novaTarefa)
+            novaTarefa.categoria = categoria
+//            realm.addObject(novaTarefa)
+            Tarefa.createOrUpdateInDefaultRealmWithObject(novaTarefa)
         }
         
         self.dismissViewControllerAnimated(true, completion: nil)

@@ -12,4 +12,9 @@ class Tarefa: RLMObject {
     dynamic var titulo = ""
     dynamic var descricao = ""
     dynamic var data = NSDate()
+    dynamic var categoria: Categoria?
+    
+    override class func primaryKey() -> String! {
+        return "titulo"
+    }
 }

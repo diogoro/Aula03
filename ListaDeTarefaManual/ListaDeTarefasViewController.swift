@@ -17,6 +17,12 @@ class ListaDeTarefasViewController: UIViewController, UITableViewDataSource {
         }
     }
     
+    var arrayTarefasC2: RLMResults {
+        get{
+            return Tarefa.objectsWhere("categoria == 'c2'")
+        }
+    }
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -32,11 +38,16 @@ class ListaDeTarefasViewController: UIViewController, UITableViewDataSource {
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return Int(Categoria.allObjects().count)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Int(self.arrayTarefas.count) // necessario fazer o typeCast
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let categoria = Categoria.allObjects()[UInt(section)] as Categoria
+        return categoria.nome
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -48,7 +59,7 @@ class ListaDeTarefasViewController: UIViewController, UITableViewDataSource {
         var formatter: NSDateFormatter = NSDateFormatter()
         formatter.dateFormat = "dd/MM - hh:mm"
         var dataString = formatter.stringFromDate(minhaTarefa.data)
-        println("Data em string: \(dataString)")
+//        println("Data em string: \(dataString)")
         
         minhaCell.tituloTarefa.text = minhaTarefa.titulo
         minhaCell.descricaoTarefa.text = minhaTarefa.descricao

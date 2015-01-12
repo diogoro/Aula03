@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D9650F3C1A63505900E141E2 /* Categoria.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9650F3B1A63505900E141E2 /* Categoria.swift */; };
 		D9CA17C51A5CB957007F8E61 /* AdicionaTarefaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CA17C41A5CB957007F8E61 /* AdicionaTarefaViewController.swift */; };
 		D9DA46521A5B3ACD00F16618 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DA46511A5B3ACD00F16618 /* AppDelegate.swift */; };
 		D9DA46571A5B3ACD00F16618 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9DA46551A5B3ACD00F16618 /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D9650F3B1A63505900E141E2 /* Categoria.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Categoria.swift; sourceTree = "<group>"; };
 		D9CA17C41A5CB957007F8E61 /* AdicionaTarefaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdicionaTarefaViewController.swift; sourceTree = "<group>"; };
 		D9DA464C1A5B3ACD00F16618 /* ListaDeTarefaManual.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListaDeTarefaManual.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9DA46501A5B3ACD00F16618 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				D9DA46751A5B4BCC00F16618 /* Tarefa.swift */,
+				D9650F3B1A63505900E141E2 /* Categoria.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			files = (
 				D9DA46721A5B3B4D00F16618 /* ListaDeTarefasViewController.swift in Sources */,
 				D9F576FD1A5DD4FB000A02E9 /* RLMSupport.swift in Sources */,
+				D9650F3C1A63505900E141E2 /* Categoria.swift in Sources */,
 				D9CA17C51A5CB957007F8E61 /* AdicionaTarefaViewController.swift in Sources */,
 				D9DA46521A5B3ACD00F16618 /* AppDelegate.swift in Sources */,
 				D9DA46761A5B4BCC00F16618 /* Tarefa.swift in Sources */,

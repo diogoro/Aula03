@@ -109,27 +109,35 @@
                                 <rect key="frame" x="20" y="144" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="Sch-iZ-n6c" id="HnP-P0-ue1"/>
-                                </connections>
                             </textField>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="l1Y-K2-TNQ">
-                                <rect key="frame" x="20" y="204" width="560" height="162"/>
+                                <rect key="frame" x="20" y="234" width="560" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="442283813.07158202">
                                     <!--2015-01-07 00:36:53 +0000-->
                                 </date>
                             </datePicker>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Categoria da tarefa" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MZ6-j7-oAo">
+                                <rect key="frame" x="20" y="194" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Sch-iZ-n6c" id="DtT-Zz-bB0"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="U5D-BX-Hzx" firstAttribute="top" secondItem="Lrq-ZT-FzT" secondAttribute="bottom" constant="20" id="9dT-3c-iV5"/>
                             <constraint firstItem="Lrq-ZT-FzT" firstAttribute="top" secondItem="5PE-rd-O0o" secondAttribute="bottom" constant="30" id="Bof-U6-03e"/>
                             <constraint firstAttribute="trailing" secondItem="Lrq-ZT-FzT" secondAttribute="trailing" constant="20" id="VIc-LN-Ght"/>
+                            <constraint firstAttribute="trailing" secondItem="MZ6-j7-oAo" secondAttribute="trailing" constant="20" id="aHt-to-pkL"/>
                             <constraint firstItem="l1Y-K2-TNQ" firstAttribute="leading" secondItem="iR4-je-fQM" secondAttribute="leading" constant="20" id="buz-KP-ane"/>
-                            <constraint firstItem="l1Y-K2-TNQ" firstAttribute="top" secondItem="U5D-BX-Hzx" secondAttribute="bottom" constant="30" id="hzX-im-NDd"/>
+                            <constraint firstItem="MZ6-j7-oAo" firstAttribute="top" secondItem="U5D-BX-Hzx" secondAttribute="bottom" constant="20" id="eX6-DQ-3U9"/>
                             <constraint firstAttribute="trailing" secondItem="U5D-BX-Hzx" secondAttribute="trailing" constant="20" id="i1T-re-s9m"/>
                             <constraint firstItem="Lrq-ZT-FzT" firstAttribute="leading" secondItem="iR4-je-fQM" secondAttribute="leading" constant="20" id="oPe-Zp-SjB"/>
                             <constraint firstItem="U5D-BX-Hzx" firstAttribute="leading" secondItem="iR4-je-fQM" secondAttribute="leading" constant="20" id="q8k-dp-sCM"/>
+                            <constraint firstItem="l1Y-K2-TNQ" firstAttribute="top" secondItem="MZ6-j7-oAo" secondAttribute="bottom" constant="10" id="tA2-Qw-3C5"/>
+                            <constraint firstItem="MZ6-j7-oAo" firstAttribute="leading" secondItem="iR4-je-fQM" secondAttribute="leading" constant="20" id="x68-CO-1bR"/>
                             <constraint firstAttribute="trailing" secondItem="l1Y-K2-TNQ" secondAttribute="trailing" constant="20" id="zgf-zP-4y7"/>
                         </constraints>
                     </view>
@@ -148,6 +156,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="categoriaTarefa" destination="MZ6-j7-oAo" id="fIM-Ei-siZ"/>
                         <outlet property="dataTarefa" destination="l1Y-K2-TNQ" id="NOL-rI-9jY"/>
                         <outlet property="descricaoTarefa" destination="U5D-BX-Hzx" id="C4u-M6-3Lq"/>
                         <outlet property="tituloTarefa" destination="Lrq-ZT-FzT" id="peo-tn-B5V"/>
