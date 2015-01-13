@@ -37,6 +37,7 @@ class AdicionaTarefaViewController: UIViewController, UITextFieldDelegate {
         realm.transactionWithBlock { () -> Void in
             let categoria = Categoria()
             categoria.nome = self.categoriaTarefa.text
+            Categoria.createOrUpdateInDefaultRealmWithObject(categoria)
             let novaTarefa = Tarefa()
             novaTarefa.titulo = self.tituloTarefa.text
             novaTarefa.descricao = self.descricaoTarefa.text

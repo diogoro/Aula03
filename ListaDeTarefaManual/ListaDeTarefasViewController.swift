@@ -17,12 +17,6 @@ class ListaDeTarefasViewController: UIViewController, UITableViewDataSource {
         }
     }
     
-    var arrayTarefasC2: RLMResults {
-        get{
-            return Tarefa.objectsWhere("categoria == 'c2'")
-        }
-    }
-    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -38,22 +32,24 @@ class ListaDeTarefasViewController: UIViewController, UITableViewDataSource {
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return Int(Categoria.allObjects().count)
+        return 1 //Int(Categoria.allObjects().count)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Int(self.arrayTarefas.count) // necessario fazer o typeCast
     }
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let categoria = Categoria.allObjects()[UInt(section)] as Categoria
-        return categoria.nome
-    }
+//    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        let categoria = Categoria.allObjects()[UInt(section)] as Categoria
+//        return categoria.nome
+//    }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let minhaCell = tableView.dequeueReusableCellWithIdentifier("minhaCelula") as CelulaTarefaTableViewCell
         
         let minhaTarefa = arrayTarefas[UInt(indexPath.row)] as Tarefa
+        
+        minhaCell.showsReorderControl = true //Habilita as celulas para ordenação
         
         //converter NSDate para NSString
         var formatter: NSDateFormatter = NSDateFormatter()
@@ -68,6 +64,44 @@ class ListaDeTarefasViewController: UIViewController, UITableViewDataSource {
 
         minhaCell.backgroundColor = getRandomColor()
         return minhaCell
+    }
+    
+    func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+        println("IndexPath origem \(sourceIndexPath.row), indexPath destino \(destinationIndexPath.row)")
+    }
+    
+    @IBAction func editandoTabela(sender: UIBarButtonItem) {
+        
+        if self.tableView.editing {
+           self.tableView.editing = false
+        } else {
+            self.tableView.editing = true
+        }
+        
+    }
+    /*
+        Quando for deletar da tabela tem que deletar do banco de dados e vice-versa
+    */
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let realm = RLMRealm.defaultRealm()
+        realm.transactionWithBlock { () -> Void in
+            let tarefaDel = self.arrayTarefas[UInt(indexPath.row)] as Tarefa
+            realm.deleteObject(tarefaDel)
+            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation:UITableViewRowAnimation.Fade)
+        }
+        
+        
+    }
+    /*
+        CanEditRowAtIndexPath serve para dizer qual célula pode ser editada ou não. Baseado no IndexPath passada
+    */
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+//        if indexPath.row == 0 {
+//            return false
+//        }
+        
+        return true
     }
     
     func getRandomColor() -> UIColor{
