@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="20U-1R-qPi">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Instagram-->
@@ -17,18 +16,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qgO-wO-3Vq">
-                                <rect key="frame" x="175" y="40" width="250" height="250"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qgO-wO-3Vq">
+                                <rect key="frame" x="175" y="104" width="250" height="250"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="18" id="5tV-t6-HUi"/>
-                                    <constraint firstAttribute="width" constant="250" id="hWg-fO-J7Z"/>
+                                    <constraint firstAttribute="width" constant="250" id="2m4-WJ-Mic"/>
+                                    <constraint firstAttribute="height" constant="250" id="7Nu-91-ofL"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="qgO-wO-3Vq" secondAttribute="centerX" id="NRs-H2-Myq"/>
-                            <constraint firstItem="qgO-wO-3Vq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="40" id="m3R-Hk-p9K"/>
+                            <constraint firstAttribute="centerX" secondItem="qgO-wO-3Vq" secondAttribute="centerX" id="ndj-B9-lML"/>
+                            <constraint firstItem="qgO-wO-3Vq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="yzT-wv-fv9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Instagram" id="3cp-9S-6BW">
