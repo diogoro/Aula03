@@ -43,6 +43,7 @@ class AdicionaTarefaViewController: UIViewController, UITextFieldDelegate {
             novaTarefa.descricao = self.descricaoTarefa.text
             novaTarefa.data = self.dataTarefa.date
             novaTarefa.categoria = categoria
+            novaTarefa.posicao = Int(Tarefa.allObjects().count)
 //            realm.addObject(novaTarefa)
             Tarefa.createOrUpdateInDefaultRealmWithObject(novaTarefa)
         }

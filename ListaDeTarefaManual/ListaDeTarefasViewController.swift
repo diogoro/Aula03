@@ -13,7 +13,7 @@ class ListaDeTarefasViewController: UIViewController, UITableViewDataSource {
     
     var arrayTarefas:RLMResults { // retorna todos os objetos da tabela
         get{
-           return Tarefa.allObjects()
+           return Tarefa.allObjects().sortedResultsUsingProperty("posicao", ascending: true)
         }
     }
     
@@ -68,6 +68,30 @@ class ListaDeTarefasViewController: UIViewController, UITableViewDataSource {
     
     func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
         println("IndexPath origem \(sourceIndexPath.row), indexPath destino \(destinationIndexPath.row)")
+        
+        let posicaoDestino = destinationIndexPath.row
+        let posicaoOrigem = sourceIndexPath.row
+        let realm = RLMRealm.defaultRealm()
+        realm.transactionWithBlock { () -> Void in
+            let tarefaAlterada = self.arrayTarefas[UInt(posicaoOrigem)] as Tarefa
+            tarefaAlterada.posicao = posicaoDestino
+            if posicaoDestino > posicaoOrigem {
+                for i in posicaoOrigem+1...posicaoDestino {
+//                    println("Numero i: \(i)")
+                    let tarefa = self.arrayTarefas[UInt(i)] as Tarefa
+//                    println("Tarefa: \(tarefa.titulo) posicao: \(tarefa.posicao)")
+                    tarefa.posicao = i-1
+//                    println("Tarefa apos alteracao: \(tarefa.titulo) posicao: \(tarefa.posicao)")
+                }
+            } else if posicaoDestino < posicaoOrigem {
+                for i in posicaoDestino...posicaoOrigem-1 {
+//                    println("Numero i: \(i)")
+                    let tarefa = self.arrayTarefas[UInt(i)] as Tarefa
+                    tarefa.posicao = i+1
+                }
+            }
+        }
+        
     }
     
     @IBAction func editandoTabela(sender: UIBarButtonItem) {
