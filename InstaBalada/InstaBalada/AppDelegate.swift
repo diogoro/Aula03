@@ -18,30 +18,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         Parse.setApplicationId("OcT3hQI0aI80mtJDhfsTELifZki8CoGBhschNvIl", clientKey: "k8SOYMKxIpQmuIwgaR85uz8aOwYdhc5HoRNPJYRU")
-        
-        let foto = PFObject(className: "Foto")
-        foto.setObject("Uma foto", forKey: "titulo")
-        foto.setObject("Descricao", forKey: "descricao")
-        foto.setObject("14/01/2015", forKey: "data")
-        
-        foto.saveInBackgroundWithBlock { (sucesso, erro) -> Void in
-            if sucesso == true {
-                println("Foto salva com sucesso")
-            } else {
-                println(erro)
-            }
-        }
-        println("Esse print deve ser por ultimo")
-        println()
-
-        let query = PFQuery(className: "Foto")
-        query.getObjectInBackgroundWithId("uB4kgh9nXl", block: { (foto, erro) -> Void in
-            if let aFoto = foto{
-                aFoto.setObject("Outra Descricao", forKey: "descricao")
-                aFoto["data"] = "19/01/2015"
-                aFoto.save()
-            }
-        })
+        //Exemplo de codigo usando o Parse para inserir, consultar e criar tabela
+//        let foto = PFObject(className: "Foto")
+//        foto.setObject("Uma foto", forKey: "titulo")
+//        foto.setObject("Descricao", forKey: "descricao")
+//        foto.setObject("14/01/2015", forKey: "data")
+//        
+//        foto.saveInBackgroundWithBlock { (sucesso, erro) -> Void in
+//            if sucesso == true {
+//                println("Foto salva com sucesso")
+//            } else {
+//                println(erro)
+//            }
+//        }
+//        println("Esse print deve ser por ultimo")
+//        println()
+//
+//        let query = PFQuery(className: "Foto")
+//        query.getObjectInBackgroundWithId("uB4kgh9nXl", block: { (foto, erro) -> Void in
+//            if let aFoto = foto{
+//                aFoto.setObject("Outra Descricao", forKey: "descricao")
+//                aFoto["data"] = "19/01/2015"
+//                aFoto.save()
+//            }
+//        })
         
         return true
     }

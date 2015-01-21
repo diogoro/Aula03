@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D95436DF1A6DAACE00F6A8F9 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95436DE1A6DAACE00F6A8F9 /* ParseUI.framework */; };
+		D95436E11A6DAAE200F6A8F9 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95436E01A6DAAE200F6A8F9 /* Social.framework */; };
+		D95436E31A6DAAE900F6A8F9 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95436E21A6DAAE900F6A8F9 /* Accounts.framework */; };
+		D95436E51A6DBE7800F6A8F9 /* ListaUsuarioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95436E41A6DBE7800F6A8F9 /* ListaUsuarioTableViewController.swift */; };
 		D9650F4C1A671D9700E141E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9650F4B1A671D9700E141E2 /* AppDelegate.swift */; };
 		D9650F4E1A671D9700E141E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9650F4D1A671D9700E141E2 /* ViewController.swift */; };
 		D9650F511A671D9700E141E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9650F4F1A671D9700E141E2 /* Main.storyboard */; };
@@ -39,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D95436DE1A6DAACE00F6A8F9 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		D95436E01A6DAAE200F6A8F9 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		D95436E21A6DAAE900F6A8F9 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		D95436E41A6DBE7800F6A8F9 /* ListaUsuarioTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaUsuarioTableViewController.swift; sourceTree = "<group>"; };
 		D9650F461A671D9700E141E2 /* InstaBalada.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaBalada.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9650F4A1A671D9700E141E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9650F4B1A671D9700E141E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,8 +78,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D95436E31A6DAAE900F6A8F9 /* Accounts.framework in Frameworks */,
+				D95436E11A6DAAE200F6A8F9 /* Social.framework in Frameworks */,
 				D9650F841A671E7900E141E2 /* libsqlite3.dylib in Frameworks */,
 				D9650F821A671E6B00E141E2 /* libz.dylib in Frameworks */,
+				D95436DF1A6DAACE00F6A8F9 /* ParseUI.framework in Frameworks */,
 				D9650F801A671E6100E141E2 /* SystemConfiguration.framework in Frameworks */,
 				D9650F7E1A671E5700E141E2 /* StoreKit.framework in Frameworks */,
 				D9650F7C1A671E4E00E141E2 /* Security.framework in Frameworks */,
@@ -119,6 +130,7 @@
 			children = (
 				D9650F4B1A671D9700E141E2 /* AppDelegate.swift */,
 				D9650F4D1A671D9700E141E2 /* ViewController.swift */,
+				D95436E41A6DBE7800F6A8F9 /* ListaUsuarioTableViewController.swift */,
 				D9650F4F1A671D9700E141E2 /* Main.storyboard */,
 				D9650F521A671D9800E141E2 /* Images.xcassets */,
 				D9650F541A671D9800E141E2 /* LaunchScreen.xib */,
@@ -157,10 +169,13 @@
 		D9650F861A671EA400E141E2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D9650F6B1A671DB500E141E2 /* Bolts.framework */,
-				D9650F6C1A671DB500E141E2 /* Parse.framework */,
 				D9650F831A671E7900E141E2 /* libsqlite3.dylib */,
 				D9650F811A671E6B00E141E2 /* libz.dylib */,
+				D95436E21A6DAAE900F6A8F9 /* Accounts.framework */,
+				D95436E01A6DAAE200F6A8F9 /* Social.framework */,
+				D95436DE1A6DAACE00F6A8F9 /* ParseUI.framework */,
+				D9650F6B1A671DB500E141E2 /* Bolts.framework */,
+				D9650F6C1A671DB500E141E2 /* Parse.framework */,
 				D9650F7F1A671E6100E141E2 /* SystemConfiguration.framework */,
 				D9650F7D1A671E5700E141E2 /* StoreKit.framework */,
 				D9650F7B1A671E4E00E141E2 /* Security.framework */,
@@ -223,9 +238,11 @@
 				TargetAttributes = {
 					D9650F451A671D9700E141E2 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = M332GNYV4F;
 					};
 					D9650F5A1A671D9800E141E2 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = M332GNYV4F;
 						TestTargetID = D9650F451A671D9700E141E2;
 					};
 				};
@@ -275,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9650F4E1A671D9700E141E2 /* ViewController.swift in Sources */,
+				D95436E51A6DBE7800F6A8F9 /* ListaUsuarioTableViewController.swift in Sources */,
 				D9650F4C1A671D9700E141E2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,6 +451,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -444,6 +464,7 @@
 				INFOPLIST_FILE = InstaBaladaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InstaBalada.app/InstaBalada";
 			};
 			name = Debug;
@@ -452,6 +473,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -459,6 +482,7 @@
 				INFOPLIST_FILE = InstaBaladaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InstaBalada.app/InstaBalada";
 			};
 			name = Release;
@@ -482,6 +506,7 @@
 				D9650F671A671D9800E141E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D9650F681A671D9800E141E2 /* Build configuration list for PBXNativeTarget "InstaBaladaTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +515,7 @@
 				D9650F6A1A671D9800E141E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
