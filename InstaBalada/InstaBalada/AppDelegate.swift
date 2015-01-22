@@ -42,6 +42,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //                aFoto.save()
 //            }
 //        })
+        let currentDevice = UIDevice()
+        println("SystemVersion: \(currentDevice.systemVersion)")
+        
+        /*
+            O codigo a seguir serve para registrar o id do celular para receber push notifications
+        */
+        let userNotificationTypes:UIUserNotificationType = UIUserNotificationType.Alert |
+            UIUserNotificationType.Badge |
+            UIUserNotificationType.Sound
+        let userNotificationSettings: UIUserNotificationSettings = UIUserNotificationSettings(forTypes: userNotificationTypes, categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(userNotificationSettings)
+        //Fim
         
         return true
     }
@@ -67,7 +79,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        println("My device token is \(deviceToken)")
+    }
+    
+    func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
+        UIApplication.sharedApplication().registerForRemoteNotifications()
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        println("Failed to get token, error: \(error)")
+        println(error.localizedDescription)
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        
+    }
 }
 
